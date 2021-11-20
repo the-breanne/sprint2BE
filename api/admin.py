@@ -1,13 +1,13 @@
 
 # Register your models here.
 from django.contrib import admin
-from .models import Movie
+from .models import Todo
 
-class MovieList(admin.ModelAdmin):
-    list_display = ('name', 'year', 'description', 'rating')
-    list_filter = ('name', 'year', 'rating')
-    search_fields = ('name', 'description')
-    ordering = ['year']
+class TodoList(admin.ModelAdmin):
+    list_display = ('task_number', 'task_name', 'task_des', 'due_date')
+    list_filter = ('task_number', 'task_name', 'task_des', 'due_date')
+    search_fields = ('task_number', 'task_name')
+    ordering = ['task_number']
 
 
-admin.site.register(Movie, MovieList)
+admin.site.register(Todo, TodoList)

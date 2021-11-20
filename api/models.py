@@ -4,11 +4,11 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class Movie(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField(max_length=360)
-    year = models.IntegerField(blank=False, null=False)
-    rating = models.IntegerField(blank=False, null=False)
+class Todo(models.Model):
+    task_number = models.CharField(max_length=50)
+    task_name = models.TextField(max_length=360)
+    task_des = models.TextField(max_length=360)
+    due_date = models.TextField(max_length=360)
 
     created_date = models.DateTimeField(
         default=timezone.now)
